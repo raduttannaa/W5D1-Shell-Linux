@@ -1,0 +1,377 @@
+                                                                                                  
+┌──(kali㉿kali)-[~/esercizio]
+└─$ tree
+.
+├── dos
+├── studenti
+│   ├── anna
+│   │   └── casa
+│   ├── matteo
+│   │   └── amici
+│   └── nicola
+│       ├── lavoro
+│       └── scuola
+│           ├── compito.doc
+│           └── relazione.doc
+├── tmp
+└── windows
+
+12 directories, 2 files
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ cd tmp      
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/tmp]
+└─$ touch risultati.doc                     
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/tmp]
+└─$ ls
+risultati.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/tmp]
+└─$ cd .. 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  studenti  tmp  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ cd studenti/anna/casa 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ ls -l 
+total 0
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ cp ../../nicola/scuola/compito.doc compito.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ ls   
+compito.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ mv ../../nicola/scuola/relazione.doc .     
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ ls
+compito.doc  relazione.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ cd ../../nicola/scuola                        
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/scuola]
+└─$ ls
+compito.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/scuola]
+└─$ cd ../../anna/casa    
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ ls
+compito.doc  relazione.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ ls -l 
+total 0
+-rw-rw-r-- 1 kali kali 0 Jul 28 18:12 compito.doc
+-rw-rw-r-- 1 kali kali 0 Jul 28 18:01 relazione.doc
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna/casa]
+└─$ cd                   
+                                                                                                     
+┌──(kali㉿kali)-[~]
+└─$ cd esercizio 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls   
+dos  studenti  tmp  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls -l
+total 16
+drwxrwxr-x 2 kali kali 4096 Jul 28 17:43 dos
+drwxrwxr-x 5 kali kali 4096 Jul 28 17:51 studenti
+drwxrwxr-x 2 kali kali 4096 Jul 28 18:07 tmp
+drwxrwxr-x 2 kali kali 4096 Jul 28 17:45 windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir tmp/risultati.doc
+rmdir: failed to remove 'tmp/risultati.doc': Not a directory
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm tmp                 
+rm: cannot remove 'tmp': Is a directory
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir tmp              
+rmdir: failed to remove 'tmp': Directory not empty
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls   
+dos  studenti  tmp  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm tmp/risultati.doc     
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir tmp           
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  studenti  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ cd studenti/nicola/lavoro 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ touch pippo.txt    
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls
+pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l
+total 0
+-rw-rw-r-- 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ chmod 311                
+chmod: missing operand after ‘311’
+Try 'chmod --help' for more information.
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ chmod 311 pippo.txt 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l
+total 0
+--wx--x--x 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ chmod 766 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l 
+total 0
+-rwxrw-rw- 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ chmod 744 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l 
+total 0
+-rwxr--r-- 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cat pippo.txt      
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -la                
+total 8
+drwxrwxr-x 2 kali kali 4096 Jul 28 18:21 .
+drwxrwxr-x 4 kali kali 4096 Jul 28 17:54 ..
+-rwxr--r-- 1 kali kali    0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ chmod 644 pippo.txt 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -s 
+total 0
+0 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l 
+total 0
+-rw-r--r-- 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -l
+total 0
+-rw-r--r-- 1 kali kali 0 Jul 28 18:21 pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls   
+pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls -a
+.  ..  pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ c ..                     
+c: command not found
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cd ..                    
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola]
+└─$ cd   
+                                                                                                     
+┌──(kali㉿kali)-[~]
+└─$ cd esercizio/studenti 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ cd anna              
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna]
+└─$ ls   
+casa
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/anna]
+└─$ cd ..  
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ mv anna/ .anna                        
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ ls
+matteo  nicola
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ ls -a
+.  ..  .anna  matteo  nicola
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ cd nicola/lavoro 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ ls   
+pippo.txt
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cat pippo,txt   
+cat: pippo,txt: No such file or directory
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ nano pippo.txt        
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cat pippo.txt 
+fuori c'è il sole
+
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ treeùì         
+treeùì: command not found
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ tree  
+.
+└── pippo.txt
+
+1 directory, 1 file
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cd ..           
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola]
+└─$ cd ../..          
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ tree
+.
+├── dos
+├── studenti
+│   ├── matteo
+│   │   └── amici
+│   └── nicola
+│       ├── lavoro
+│       │   └── pippo.txt
+│       └── scuola
+│           └── compito.doc
+└── windows
+
+9 directories, 2 files
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ cd studenti/nicola/lavoro 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola/lavoro]
+└─$ cd ..                    
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti/nicola]
+└─$ cd ..
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio/studenti]
+└─$ cd ..
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir sutudenti/matteo/amici
+rmdir: failed to remove 'sutudenti/matteo/amici': No such file or directory
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir studenti/
+rmdir: failed to remove 'studenti/': Directory not empty
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ tree           
+.
+├── dos
+├── studenti
+│   ├── matteo
+│   │   └── amici
+│   └── nicola
+│       ├── lavoro
+│       │   └── pippo.txt
+│       └── scuola
+│           └── compito.doc
+└── windows
+
+9 directories, 2 files
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rmdir studenti/matteo/amici 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  studenti  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf prova               
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  studenti  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf studenti/
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf dos/Windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf dos/Windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf dos/windows 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+dos  windows
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ rm -rf doc studenti windows dos 
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ ls
+                                                                                                     
+┌──(kali㉿kali)-[~/esercizio]
+└─$ 
